@@ -147,7 +147,7 @@
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-54015102-1', 'auto');
@@ -333,7 +333,7 @@
                     break;
 
                 default:
-                    //Front / do nothing
+                //Front / do nothing
             }
 
             if (mesh_is_ready)
@@ -438,7 +438,7 @@
                         $id('wtext').style.height = "35px";
                     }
                 }
-            , false);
+                , false);
 
             // file received/failed
             xhr.onreadystatechange =
@@ -714,11 +714,11 @@
 
                 totalVolume +=
                     (-x3 * y2 * z1 +
-                    x2 * y3 * z1 +
-                    x3 * y1 * z2 -
-                    x1 * y3 * z2 -
-                    x2 * y1 * z3 +
-                    x1 * y2 * z3);
+                        x2 * y3 * z1 +
+                        x3 * y1 * z2 -
+                        x1 * y3 * z2 -
+                        x2 * y1 * z3 +
+                        x1 * y2 * z3);
 
                 a = geo.vertices[geo.faces[i].a].distanceTo(geo.vertices[geo.faces[i].b]);
                 b = geo.vertices[geo.faces[i].b].distanceTo(geo.vertices[geo.faces[i].c]);
@@ -862,7 +862,22 @@
 </head>
 
 <body>
-
+    <div style="position:absolute;direction:rtl;right:10px;top:10px">
+        <table>
+            <tr>
+                <td style="text-decoration:underline">מספר זהות:</td>
+                <td><%=PassportId %></td>
+            </tr>
+            <tr>
+                <td style="text-decoration:underline">שם פרט:</td>
+                <td><%=FirstName %></td>
+            </tr>
+            <tr>
+                <td style="text-decoration:underline">שם משפחה:</td>
+                <td><%=LastName %></td>
+            </tr>
+        </table>
+    </div>
     <input type="file" style="position: absolute; top: -150px;" id="fileselect" onchange="prepare_upload_file();">
 
     <div id="pwait" style="background: rgba(0,0,0,0.5); position: fixed; top: 0; right: 0; bottom: 0; left: 0; display: none; z-index: 99999999; text-align: center;">
@@ -874,12 +889,12 @@
     </div>
 
 
-    <div id="mainwrap" style="margin: 0px auto; visibility: hidden;display:table">
+    <div id="mainwrap" style="margin: 0px auto; visibility: hidden; display: table">
         <div id="statswrap">
             <div>
                 <table>
                     <tr>
-                        <td id="tdopt"  style="vertical-align: top;visibility:hidden;display:none">
+                        <td id="tdopt" style="vertical-align: top; visibility: hidden; display: none">
                             <div class="cinfo">
                                 <h2>Model info</h2>
                                 <table>
@@ -970,8 +985,8 @@
                         <td style="vertical-align: top"></td>
                         <td style="vertical-align: top">
                             <div id="cjcwrap" style="position: relative; border: 1px dashed #ccc; background: #EEEEEE; display: inline-block;">
-                                <div id="cjcdrag" style="position: relative;display:table;margin:10px auto">
-                                    <div id="titlet1" style="margin-top:150px">
+                                <div id="cjcdrag" style="position: relative; display: table; margin: 10px auto">
+                                    <div id="titlet1" style="margin-top: 150px">
                                         <img src="img/animated_progress.gif" />
                                     </div>
                                 </div>
@@ -1079,9 +1094,9 @@
         animate();
 
         window.onresize =
-        function () {
-            do_resize();
-        }
+            function () {
+                do_resize();
+            }
 
         $id('cjcwrap').addEventListener('dragover', handleDragOver, false);
         $id('cjcwrap').addEventListener('drop', handleFileDrop, false);
